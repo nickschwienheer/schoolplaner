@@ -1,0 +1,33 @@
+{
+
+"theme_color": "#131D27",
+    "background_color": "#131D27",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "app_name": "Schulplaner",
+    "short_name": "Schulpalner",
+    "description": "",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "256x",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "384x",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "512x",
+            "type": "image/png"
+        }
+    ]
+}
