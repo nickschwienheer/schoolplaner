@@ -30,3 +30,7 @@ function leaveUpdateMode(){
   document.getElementById("updater").style.display = "none";
   document.getElementById("menu").style.display = "none";
 }
+
+function openEventsMode(){
+  document.getElementById("addEventsField").style.display = "block"
+}

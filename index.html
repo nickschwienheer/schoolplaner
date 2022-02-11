@@ -122,7 +122,7 @@
 <!--------------------------------homework-widget------------------------------------->
 <div class="überschrift">
 
-        <h2>Deine Hausaufgaben</h2>
+        <h2>Hausaufgaben</h2>
 </div>
                 <textarea id="homeworkField" onclick="openHomeworkMode()" class="homework-widget" readonly></textarea>
      
@@ -151,8 +151,6 @@
         <br><br><br>
         <div class="überschrift">
              
-     
-        
         <br><br>
 
 </div>
@@ -160,13 +158,87 @@
 
 <!--------------------------------Events-widget----------------------------------------->
         <div class="überschrift">
-        <h2>Aktuelle Termine</h2>
+        <h2>Termine</h2>
+        </div>
+
+        <br>
+               
+        <div id="events" onclick="openEventsMode()" class="events-widget"></div>
+      <br>
+      <div id="addEventsField" class="addEventsField">
+        <br><br>
+        <h1>Termine</h1>
+        <br>
+        <a class="backButton" onclick="backFromHomework()">zurück</a>
+        <div class="überschrift">
+        </div>
+        <br>
+        <br>
+        <input id="date" class="datepicker" type="date"> 
+        <br><br>
+        <input id="Event" type="text" placeholder="Termin"> 
+        <br><br>
+        <button onclick="saveEvent()">Termin eintragen</button>
+        <br><br><br>
+        
+             <div class="events" id="event0" ondblclick="removeItem('event0')"></div>
+             <br>
+             <div class="events" id="event1"ondblclick="removeItem('event1')"></div>
+             <br>
+             <div class="events" id="event2"ondblclick="removeItem('event2')"></div>
+             <br>
+             <div class="events" id="event3"ondblclick="removeItem('event3')"></div>
+             <br>
+             <div class="events" id="event4"ondblclick="removeItem('event4')"></div>
+             <br>
+             <div class="events" id="event5"ondblclick="removeItem('event5')"></div>
+             <br>
+             <div class="events" id="event6"ondblclick="removeItem('event6')"></div>
+             <br>
+             <div class="events" id="event7"ondblclick="removeItem('event7')"></div>
+             <br>
+             <div class="events" id="event8"ondblclick="removeItem('event8')"></div>
+             <br>
+             <div class="events" id="event9"ondblclick="removeItem('event9')"></div>
+             <br>
+             <div class="events" id="event10"ondblclick="removeItem('event10')"></div>
+             <br>
+             <div class="events" id="event11"ondblclick="removeItem('event11')"></div>
+             <br>
+             <div class="events" id="event12"ondblclick="removeItem('event12')"></div>
+             <br>
+             <div class="events" id="event13"ondblclick="removeItem('event13')"></div>
+             <br>
+             <div class="events" id="event14"ondblclick="removeItem('event14')"></div>
+             <br>
+             <div class="events" id="event15"ondblclick="removeItem('event15')"></div>
+             <br>
+             <div class="events" id="event16"ondblclick="removeItem('event16')"></div>
+             <br>
+             <div class="events" id="event17"ondblclick="removeItem('event17')"></div>
+             <br>
+             <div class="events" id="event18"ondblclick="removeItem('event18')"></div>
+             <br>
+             <div class="events" id="event19"ondblclick="removeItem('event19')"></div>
+             <br>
+             <div class="events" id="event20"ondblclick="removeItem('event20')"></div>
+        <br><br>
+
+</div>
+
+
+
+
+      <div class="überschrift">
+        <h2>Notizen</h2>
         </div>
 
         <br>
                
         <textarea class="homework-widget" readonly style="border: none;"></textarea>
       <br>
+
+
 
 
 
@@ -419,6 +491,8 @@
 
 
 <script>
+
+
 /*
 firebase.database().ref("0001").push().set({
         "key" : "0001"
@@ -445,14 +519,20 @@ if(localStorage.hasOwnProperty("key") && localStorage.getItem("setUp") ==  "esta
 }
 
 }
+count = 0;
 function start(){
-//create UI
+if(localStorage.hasOwnProperty("event" + count)){
+count++
+start();
+}else{
+        if(count <= 20){
 
 
-
-
-
-
+localStorage.setItem("event" + count, " ")
+count++
+start();
+}
+}
 }
 
 function setUp(){
@@ -552,6 +632,7 @@ checkHWExisting();
 function finishConfig(){
         localStorage.setItem("setUp", "established");
         document.getElementById("configuration3").style.display = "none";
+        start();
         location.reload();
           
         
@@ -565,9 +646,29 @@ function saveHomework(){
        
 
 
+function saveEvent(){
+        let date = document.getElementById("date").value;
+        let event = document.getElementById("Event").value;
+
+        let count = 0;
+        addingEvent();
+        function addingEvent(){
+                if(localStorage.getItem("event" + count) != " "){
+                        count++
+                        addingEvent();
+                }else{
+                        localStorage.setItem("event" + count, date + "<br>" + event + "<br>" + "<br>");
+                        loadEvents();
+                }
+
+}
+}
 
 
-
+function removeItem(item){
+        localStorage.setItem(item, " ");
+        document.getElementById(item).style.display = "none";
+}
     </script>
 
     <script src="softwareupdate.js"></script>

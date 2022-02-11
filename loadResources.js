@@ -78,3 +78,54 @@ document.getElementById("homeworkField").innerHTML = localStorage.getItem("homew
 
 document.getElementById("homework").innerHTML = localStorage.getItem("homework");
 
+loadEvents();
+function loadEvents(){
+document.getElementById("event0").innerHTML = localStorage.getItem("event0");
+document.getElementById("event1").innerHTML = localStorage.getItem("event1");
+document.getElementById("event2").innerHTML = localStorage.getItem("event2");
+document.getElementById("event3").innerHTML = localStorage.getItem("event3");
+document.getElementById("event4").innerHTML = localStorage.getItem("event4");
+document.getElementById("event5").innerHTML = localStorage.getItem("event5");
+document.getElementById("event6").innerHTML = localStorage.getItem("event6");
+document.getElementById("event7").innerHTML = localStorage.getItem("event7");
+document.getElementById("event8").innerHTML = localStorage.getItem("event8");
+document.getElementById("event9").innerHTML = localStorage.getItem("event9");
+document.getElementById("event10").innerHTML = localStorage.getItem("event10");
+document.getElementById("event11").innerHTML = localStorage.getItem("event11");
+document.getElementById("event12").innerHTML = localStorage.getItem("event12");
+document.getElementById("event13").innerHTML = localStorage.getItem("event13");
+document.getElementById("event14").innerHTML = localStorage.getItem("event14");
+document.getElementById("event15").innerHTML = localStorage.getItem("event15");
+document.getElementById("event16").innerHTML = localStorage.getItem("event16");
+document.getElementById("event17").innerHTML = localStorage.getItem("event17");
+document.getElementById("event18").innerHTML = localStorage.getItem("event18");
+document.getElementById("event19").innerHTML = localStorage.getItem("event19");
+document.getElementById("event20").innerHTML = localStorage.getItem("event20");
+
+
+
+document.getElementById("events").innerHTML = 
+localStorage.getItem("event0") +
+ localStorage.getItem("event1") +
+ localStorage.getItem("event2")+
+ localStorage.getItem("event3")+
+ localStorage.getItem("event4")+
+ localStorage.getItem("event5")+
+ localStorage.getItem("event6")+
+ localStorage.getItem("event7")+
+ localStorage.getItem("event8")+
+ localStorage.getItem("event8")+
+ localStorage.getItem("event9")+
+ localStorage.getItem("event10")+
+ localStorage.getItem("event11")+
+ localStorage.getItem("event12")+
+ localStorage.getItem("event13")+
+ localStorage.getItem("event14")+
+ localStorage.getItem("event15")+
+ localStorage.getItem("event16")+
+ localStorage.getItem("event17")+
+ localStorage.getItem("event18")+
+ localStorage.getItem("event19")+
+ localStorage.getItem("event20")
+
+}
