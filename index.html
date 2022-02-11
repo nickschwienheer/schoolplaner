@@ -33,7 +33,11 @@
 
 
          <br><br><br><br><br>
-         <br><br><br><br><br>
+         <br><br><br>
+         <div class="überschrift">
+
+                <h2>Stundenplan</h2>
+        </div>
          <div style="width: 100%;"></div>
          <table class="tg" style="table-layout: fixed; width: 98%; height: 50vh;">
                         <colgroup>
@@ -161,7 +165,7 @@
 
         <br>
                
-        <div class="Events-widget"></div>
+        <textarea class="homework-widget" readonly style="border: none;"></textarea>
       <br>
 
 
@@ -422,11 +426,11 @@ firebase.database().ref("0001").push().set({
         });
 
 */
-  
+
 navigator.serviceWorker.register('sw.js')
             .then(subscription => console.log(subscription))
             .catch(err => console.error('Fehler', err));
-       
+
     </script>
     
 
