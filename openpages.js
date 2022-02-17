@@ -8,7 +8,7 @@ function menuDropOut(){
 
 
 
-function timetable(){
+function openTimetable(){
     document.getElementById("configuration2").style.display = "block";
 }
 
