@@ -502,6 +502,12 @@
 <script src="database.js"></script>
 <script src="openpages.js"></script>
 <script src="loadResources.js"></script>
+<script src="softwareupdate.js"></script>
+<script src="setup.js"></script>
+<script src="login.js"></script>
+<script src="timetable.js"></script>
+<script src="events.js"></script>
+<script src="onload.js"></script>
 
 
 
@@ -532,174 +538,6 @@ firebase.database().ref("0001").push().set({
 
     <script>
 
-onLoad()
-function onLoad(){
-if(localStorage.hasOwnProperty("key") && localStorage.getItem("setUp") ==  "established"){
-        start();
-}else{
-        setUp();
-}
-
-}
-count = 0;
-function start(){
-if(localStorage.hasOwnProperty("event" + count)){
-count++
-start();
-}else{
-        if(count <= 20){
-
-
-localStorage.setItem("event" + count, " ")
-count++
-start();
-}
-}
-}
-
-function setUp(){
-        if(localStorage.hasOwnProperty("setUp")){
-
-        }else{
-        localStorage.setItem("setUp", 0);
-        }
-        let setUp = parseInt(localStorage.getItem("setUp"));
-
-
-switch(setUp){
-        case 0: document.getElementById("configuration1").style.display = "block";
-                break;
-
-        case 1: document.getElementById("configuration2").style.display = "block";
-                document.getElementById("configuration1").style.display = "none";
-                break;
-
-        case 2: document.getElementById("configuration3").style.display = "block";
-                document.getElementById("configuration2").style.display = "none";
-                break;
 
        
-
-        }      
-}
-
-
-function login(){
-let key = document.getElementById("key").value;
-if(key == ""){         
-document.getElementById("fail").innerHTML = "Die Felder dürfen nicht leer sein";
-}
-
-
-firebase.database().ref(key).on("child_added", function (snapshot) {
-let saved =  snapshot.val().key;
-console.log(saved);
-localStorage.setItem("loggedIn", true);
-localStorage.setItem("key", saved);
-sessionStorage.setItem("check", true);
-var timetable = ["", "", "", "", "","", "", "", "", "","", "", "", "", "","", "", "", "", "","", "", "", "", "","", "", "", "", "","", "", "", "", "","", "", "", "", "","", "", "", "", "",];
-localStorage.setItem("timetable", JSON.stringify(timetable));
-localStorage.setItem("setUp", "1");
-location.reload();
-
-});
-
-if(sessionStorage.hasOwnProperty("check")){
-
-}else{
-document.getElementById("fail").innerHTML = "Dieses Konto existiert möglicherweise nicht oder das Passwort ist falsch";
-}
-}
-function buyAccess(){
-window.open("nbs-web.netlify.app/planer.html");
-}
-
-
-
-function addSubject(sub){
-document.getElementById("subjectSelector").style.display = "block";
-sessionStorage.setItem("sub", sub);
-   
-
-}
-
-function add(){
-    var timetable = JSON.parse(localStorage.getItem("timetable"));
-    let sub = sessionStorage.getItem("sub");
-    let subject = document.getElementById("subjectSelectorField").value;
-    timetable[sub] = subject;
-    localStorage.setItem("timetable", JSON.stringify(timetable));
-    document.getElementById("subjectSelector").style.display = "none";
-    let name = parseInt(sub) + 1 + "$"
-    document.getElementById(name).innerHTML = subject;
-
-    
-
-
-}
-
-
-function further(){
-        localStorage.setItem("setUp", "2")
-        document.getElementById("configuration3").style.display = "block";
-        document.getElementById("configuration2").style.display = "none";
-        let count = 1;
-setTimeout(function(){
-        checkHWExisting();
-function checkHWExisting(){
-if(localStorage.hasOwnProperty("hw" + count)){
-        count ++;
-        checkHWExisting();
-}else{
-if(count <= 20){
-localStorage.setItem("hw" + count, " ");
-count++
-checkHWExisting();
-}
-}
-}
-},1000);
-}
-
-function finishConfig(){
-        localStorage.setItem("setUp", "established");
-        document.getElementById("configuration3").style.display = "none";
-        start();
-        location.reload();
-          
-        
-}
-
-
-function saveHomework(){
-        let homework = document.getElementById("homework").value;
-        localStorage.setItem("homework", homework);
-        }
-       
-
-
-function saveEvent(){
-        let date = document.getElementById("date").value;
-        let event = document.getElementById("Event").value;
-
-        let count = 0;
-        addingEvent();
-        function addingEvent(){
-                if(localStorage.getItem("event" + count) != " "){
-                        count++
-                        addingEvent();
-                }else{
-                        localStorage.setItem("event" + count, date + "<br>" + event + "<br>" + "<br>");
-                        loadEvents();
-                }
-
-}
-}
-
-function removeItem(item){
-        localStorage.setItem(item, " ");
-        document.getElementById(item).style.display = "none";
-}
     </script>
-
-    <script src="softwareupdate.js"></script>

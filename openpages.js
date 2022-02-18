@@ -7,6 +7,12 @@ function menuDropOut(){
 }
 
 
+function buyAccess(){
+  window.open("nbs-web.netlify.app/planer.html");
+  }   
+  
+  
+
 
 function openTimetable(){
     document.getElementById("configuration2").style.display = "block";
@@ -34,3 +40,4 @@ function leaveUpdateMode(){
 function openEventsMode(){
   document.getElementById("addEventsField").style.display = "block"
 }
+
