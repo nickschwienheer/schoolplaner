@@ -140,7 +140,7 @@
 
         <h2>Hausaufgaben</h2>
 </div>
-                <textarea id="homeworkField" onclick="openHomeworkMode()" class="homework-widget" readonly></textarea>
+                <textarea placeholder="Noch keine Hausaufgaben" id="homeworkField" onclick="openHomeworkMode()" class="homework-widget" readonly></textarea>
      
         
 
@@ -190,7 +190,7 @@
         </div>
         <br>
         <br>
-        <input id="date" class="datepicker" type="date"> 
+        <input placeholder="Datum:" id="date" class="datepicker" type="date"> 
         <br><br>
         <input id="Event" type="text" placeholder="Termin"> 
         <br><br>
@@ -241,7 +241,14 @@
         <br><br>
 
 </div>
+<!--
+<br><br>
+<a onclick="window.open('calculator.html','_self')"><img src="calculator-icon.png" width="150px"></a>
+<a onclick="openChecklist()"><img src="checklist-icon.png" width="150px"></a>
 
+
+
+-->
 
 
 
@@ -461,7 +468,7 @@
 <br><br><br>
 <div class="elements">
 <h3>Aktuelle Version</h3>
-<p>Version 0.0.5</p>
+<p>Version 1.0.0</p>
 <br>
 <h3>Neuste Version</h3>
 <iframe class="newestVersion" src="https://nbs-planer-update.netlify.app"></iframe>
@@ -508,6 +515,7 @@
 <script src="timetable.js"></script>
 <script src="events.js"></script>
 <script src="onload.js"></script>
+<script src="homework.js"></script>
 
 
 
@@ -529,10 +537,10 @@ firebase.database().ref("0001").push().set({
 
 */
 
-/*navigator.serviceWorker.register('sw.js')
+navigator.serviceWorker.register('sw.js')
             .then(subscription => console.log(subscription))
             .catch(err => console.error('Fehler', err));
-*/
+
     </script>
     
 

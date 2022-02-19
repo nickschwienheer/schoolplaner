@@ -24,7 +24,7 @@ function login(){
         }
 
 
-    
+
     localStorage.setItem("setUp", "1");
     location.reload();
     
