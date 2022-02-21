@@ -140,8 +140,9 @@
 
         <h2>Hausaufgaben</h2>
 </div>
-                <textarea placeholder="Noch keine Hausaufgaben" id="homeworkField" onclick="openHomeworkMode()" class="homework-widget" readonly></textarea>
-     
+<div class="boxOverHomework" onclick="openHomeworkMode()">
+                <textarea placeholder="Noch keine Hausaufgaben" id="homeworkField"  class="homework-widget" readonly ></textarea>
+</div>
         
 
 <br><br>
@@ -161,7 +162,7 @@
  
         <br>
         <br>
-        <textarea id="homework" class="addhomeworkTextField" placeholder="Hausaufgaben hier:"></textarea>
+        <textarea id="homework" class="addhomeworkTextField" placeholder="Hausaufgaben hier:" ></textarea>
         <br><br>
         <button onclick="saveHomework()">speichern</button>
         <br><br><br>
@@ -241,14 +242,51 @@
         <br><br>
 
 </div>
-<!--
+
 <br><br>
-<a onclick="window.open('calculator.html','_self')"><img src="calculator-icon.png" width="150px"></a>
-<a onclick="openChecklist()"><img src="checklist-icon.png" width="150px"></a>
+
+<!-----------------------------------------------------Work Area---------------------------------------------------------->
+<div class="überschrift">
+  <h2>Dein Arbeitsbereich</h2>
+  </div>
+<table class="functionButtons">
+
+  <tr>
+    
+    <td>
+      <div class="functionContainer">
+        <br>
+        <a onclick="openCalculator()"><img src="calculator-icon.png" width="50%"></a>
+        <h4>Taschenrechner</h4>
+        <br>
+        </div>
+    </td>
+    <td>
+ 
+    </td>
+    <td>
+      <div class="functionContainer">
+        <br>
+        <a onclick="openChecklist()"><img src="checklist-icon.png" width="50%"></a>
+        <h4>Checklisten</h4>
+        <br>
+        </div>
+    </td>
+  </tr>
+
+</table>
+<br><br>
+<div class="functionContainer">
+  <br>
+  <a onclick="openLearningPage()"><img src="learning-icon.png" width="50%"></a>
+  <h3>Lernen</h3>
+  <br>
+  </div>
+<br><br><br><br>
 
 
 
--->
+
 
 
 
@@ -264,7 +302,7 @@
       </div>
       
 
-
+<!--------------------------------------------------Configuration 1----------------------------------------------------->
 
       <div id="configuration1" class="configuration1">
               <br><br><br>
@@ -297,7 +335,7 @@
       </div>
 
 
-
+<!-----------------------------------------------------------Configuration 2--------------------------------------------------------------->
       <div id="configuration2" class="configuration1">
         <br><br><br>
     
@@ -440,7 +478,7 @@
         <br>
 </div>
 
-
+<!--------------------------------------------------Configuration 4------------------------------------------------------------>
 
 <div id="configuration3" class="configuration1">
         <br><br><br><br><br><br><br>
@@ -489,6 +527,100 @@
         
 </div>
 
+
+
+<!--------------------------------------------------Calculator--------------------------------------------------------------->
+
+<div class="calculator" id="calcField">
+  <br><br>
+  <a onclick="backFromCalculator()" class="backButton">zurück</a>
+
+  <br><br><br><br><br>
+  <div id="resultArea" class="Field">
+
+  </div>
+  <table class="calcTable">
+
+          <tr>
+                 <button onclick="setNull()" class="cButton">CLEAR</button> 
+          </tr>
+         
+          <tr>
+          <td class="calc-td" onclick="appendOperation(7)">7</td>
+          <td class="calc-td" onclick="appendOperation(8)">8</td>
+          <td class="calc-td"onclick="appendOperation(9)">9</td>
+          <td class="calc-td"onclick="appendOperation(' / ')">/</td>
+          </tr>
+
+          <tr>
+          <td class="calc-td"onclick="appendOperation(4)">4</td>
+          <td class="calc-td"onclick="appendOperation(5)">5</td>
+          <td class="calc-td"onclick="appendOperation(6)">6</td>
+          <td class="calc-td"onclick="appendOperation(' * ')">x</td>
+          </tr>
+         
+          <tr>
+          <td class="calc-td"onclick="appendOperation(1)">1</td>
+          <td class="calc-td"onclick="appendOperation(2)">2</td>
+          <td class="calc-td"onclick="appendOperation(3)">3</td>
+          <td class="calc-td"onclick="appendOperation(' + ')">+</td>
+          </tr>
+
+          <tr>
+         
+          <td class="calc-td"onclick="appendOperation(0)">0</td>
+          <td class="calc-td"onclick="appendOperation('.')">,</td>
+          <td class="calc-td"onclick="calculate()">=</td>
+          <td class="calc-td"onclick="appendOperation(' - ')">-</td>
+          </tr>
+
+  </table>
+</div>
+
+
+
+
+</div>
+<div id="learningPage" class="learningPage">
+<br><br>
+<a class="backButton" onclick="back()">zurück</a>
+  <h1>Lernen</h1>
+  <br><br>
+<table class="functionButtons">
+
+  <tr>
+    
+    <td>
+      <div class="functionContainerLearning">
+        <br>
+        <a onclick="openIndexCards()"><img src="indexcards-icon.png" width="50%"></a>
+        <h4>Karteikarten</h4>
+        <br>
+
+        </div>
+    </td>
+
+
+   
+   
+  </tr>
+
+</table>
+</div>
+
+
+<div id="indexCards" class="indexCardsPage">
+    <a onclick="closeAddCardMode()" class="closeIcon"><img src="x-icon.png" height="35px"></a>
+ 
+  <h1>Karteikarten</h1>
+<br>
+  <img  src="indexcard.png" width="90%" class="card">
+  <br>
+  <div class="containerForCard">
+  <textarea class="cardInput">test</textarea>
+</div>
+
+
 <script>
      /*   if(sessionStorage.hasOwnProperty("splash")){
                 document.getElementById("splash").style.display = "none";
@@ -516,6 +648,9 @@
 <script src="events.js"></script>
 <script src="onload.js"></script>
 <script src="homework.js"></script>
+<script src="calculator.js"></script>
+<script src="learning.js"></script>
+
 
 
 
@@ -537,10 +672,10 @@ firebase.database().ref("0001").push().set({
 
 */
 
-navigator.serviceWorker.register('sw.js')
+/*navigator.serviceWorker.register('sw.js')
             .then(subscription => console.log(subscription))
             .catch(err => console.error('Fehler', err));
-
+*/
     </script>
     
 

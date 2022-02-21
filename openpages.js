@@ -41,3 +41,28 @@ function openEventsMode(){
   document.getElementById("addEventsField").style.display = "block"
 }
 
+
+function openCalculator(){
+  document.getElementById("calcField").style.display = "block";
+}
+function backFromCalculator(){
+  document.getElementById("calcField").style.display = "none";
+}
+
+function back(){
+  document.getElementById("learningPage").style.display = "none";
+}
+
+
+function openIndexCards(){
+  document.getElementById("indexCards").style.display = "block";
+}
+
+
+function closeAddCardMode(){
+  document.getElementById("indexCards").style.display = "none";
+}
+
+function openLearningPage(){
+  document.getElementById("learningPage").style.display = "block";
+}

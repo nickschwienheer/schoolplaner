@@ -19,6 +19,8 @@ header{
     position: fixed;
     color: white;
     z-index: 100;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     
 
 } 
@@ -188,12 +190,12 @@ input{
     font-size:18px;
     font-family:"Arial Black", Gadget, sans-serif !important;
     ;text-align:center;
-    background-color: rgba(0, 208, 255, 0.214);
+    background-color: rgb(74, 90, 99);
 }
 .tg .tg-szxb{
     font-family:"Arial Black", Gadget, sans-serif !important;
     ;text-align:center;
-    background-color: rgba(0, 208, 255, 0.214);
+    background-color: rgb(74, 90, 99);
 }
 .tg .tg-ced2{font-size:15px;
     font-family:Arial, Helvetica, sans-serif !important;
@@ -284,16 +286,19 @@ input{
 
 
 #homeworkField{
-    color: white;
+  
+    color: #ffffff;
     font-size: 15px;
     border: none;
-    background-color:rgb(25, 36, 44);
+    background-color:rgb(30, 40, 46);;
     min-height: 200px;
     height: auto;
     width: 96%;
     border-radius: 13px;
     position: relative;
-    left: 0%;
+    left: 0%; 
+    
+  
     
     
 }
@@ -380,7 +385,7 @@ text-align: left;
     color: white;
     font-size: 15px;
     border: none;
-    background-color:rgb(25, 36, 44);
+    background-color:rgb(30, 40, 46);
     min-height: 200px;
     height: auto;
     width: 99%;
@@ -397,3 +402,189 @@ input[type="date"]:not(.has-value):before{
   color: lightgray;
   content: attr(placeholder);
 }
+
+.functionContainer{
+    background-color: rgb(30, 40, 46);
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.functionButtons{
+    width: 100%;
+}
+
+
+.calcTable{
+    width: 100%;
+    height: 48vh;
+    font-size: 30px;
+  
+}
+
+.calc-td{
+width: 25%;
+color: white;
+
+margin: 0;
+}
+.calc-td:hover{
+    background-color: rgb(75, 75, 75);
+}
+
+
+.Field{
+    width: 100%;
+    height: 25vh;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 30px ;
+}
+
+.cButton{
+    border-radius: 0;
+    border: none;
+    background-color: rgb(44, 44, 44);
+    height: 30px;
+    width: 90px;
+    color: white;
+    position: relative;
+    top: 50px;
+    right: 37.5%;
+}
+
+.cButton:hover{
+    border-radius: 0;
+    border: none;
+    background-color: rgb(44, 44, 44);
+    height: 30px;
+    width: 90px;
+    color: white;
+    position: relative;
+    top: 50px;
+    right: 37.5%;
+}
+
+
+
+.calculator{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(19, 29, 39);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display:none;
+    z-index: 200;
+}
+
+
+
+.learningPage{
+    background-color: rgb(19, 29, 39);
+}
+
+
+.functionContainerLearning{
+    background-color: rgb(30, 40, 46);
+    width: 97%;
+    border-radius: 10px;
+    position: relative;
+    left: 1.5%;
+    
+   
+}
+
+.card{
+    border-radius: 20px;
+    width: 350px;
+}
+
+
+.cardInput{
+    width: 320px;
+    height: 150px;
+    z-index: 1;
+    position: relative;
+    top: -180px;
+    font-size: 13pt;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+
+}
+
+.containerForCard{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.indexCardsPage{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(19, 29, 39);
+    position: fixed;
+    top: 10%;
+    left: 0;
+    display: none;
+    z-index: 200;
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px ;
+    box-shadow: black 0px 0px 20px;
+    animation: 0.5s slide-up;
+
+}
+
+
+
+  
+  @keyframes slide-up {
+    from {
+      margin-top: 100%;
+      height: 300%;
+    }
+    to {
+      margin-top: 0%;
+      height: 100%;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+        margin-top: 0%;
+        height: 100%;
+ 
+    }
+    to {
+        margin-top: 100%;
+      height: 300%;
+    }
+  }
+
+
+
+  .closeIcon{
+      position: relative;
+      left: 44%;
+      top: 10px;
+  }
+
+
+
+.learningPage{
+    width: 100%;
+    height: 101vh;
+    background-color: rgb(19, 29, 39);
+    position: fixed;
+    top: -1px;
+    left: 0;
+    display: none;
+    z-index: 200;
+}
+
+
+
